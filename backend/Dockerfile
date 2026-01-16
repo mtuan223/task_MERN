@@ -14,8 +14,8 @@ RUN npm install
 # Copy toàn bộ code còn lại của backend vào /app
 COPY . .
 
-# Mở port 5000
-EXPOSE 5000
+# Mở port 8000
+EXPOSE 8000
 
 # Chạy ứng dụng
 CMD ["npm", "start"]
