@@ -50,7 +50,9 @@ test("should set a new task for a user", async () => {
     text: "New Task",
     user: "user-id",
   };
+  // configure the response when calling the model function
   Task.create.mockResolvedValue(task);
+
   const res = {
     status: jest.fn().mockReturnThis(),
     json: jest.fn(),
