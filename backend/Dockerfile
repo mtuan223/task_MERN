@@ -1,12 +1,21 @@
-# Use the official Node.js image as the base image
+# Sử dụng Node.js image
 FROM node:18
-# Set the working directory in the container
+
+# Set working directory bên trong container
 WORKDIR /app
-# Copy the application files into the working directory
-COPY backend/package*.json ./
-# Install the application dependencies
+
+# Copy package.json và package-lock.json (nếu có)
+# Vì context là ./backend, nên ta dùng ./ để lấy file ngay tại đó
+COPY package*.json ./
+
+# Cài đặt dependencies
 RUN npm install
-COPY backend .
+
+# Copy toàn bộ code còn lại của backend vào /app
+COPY . .
+
+# Mở port 8000
 EXPOSE 8000
-# Define the entry point for the container
+
+# Chạy ứng dụng
 CMD ["npm", "start"]
