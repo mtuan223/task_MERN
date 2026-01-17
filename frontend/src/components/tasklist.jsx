@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { getTasks, reset } from "../features/task/taskSlice";
 import { toast } from "react-toastify";
 import Spinner from "./spinner";
-import TaskItem from "./TaskItem";
+import TaskItem from "./Taskitem";
 
 const TaskList = () => {
   const { isSuccess, isError, isLoading, tasks, message } = useSelector(

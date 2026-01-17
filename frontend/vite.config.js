@@ -6,7 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/api": "http://localhost:8000",
+      // "/api": "http://localhost:8000",
+      "/api": "https://tuan-odjtineo.b4a.run/",
     },
   },
   test: {
