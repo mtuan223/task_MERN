@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "/api/tasks/";
+const API_URL = import.meta.env.VITE_API_URL || "/api/tasks/";
 
 const createTask = async (taskData, token) => {
   const config = {
